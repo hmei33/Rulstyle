@@ -78,5 +78,32 @@ footer {
 @media (min-width: 600px) {
     .container {
         width: 400px;
-    }
 }
+
+/* Membuat gambar profil Anda berbentuk bulat dan elegan */
+img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+/* Mengatur container agar tidak terlalu lebar di layar besar */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Membuat tombol terlihat lebih menarik */
+button {
+    background-color: #4A90E2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
