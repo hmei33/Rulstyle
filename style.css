@@ -1,10 +1,11 @@
+/* 1. Google Fonts & Variables */
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
 
 :root {
     --bg-color: #f8fafc;
     --card-bg: #ffffff;
     --text-main: #0f172a;
-    --accent: #6366f1; /* Warna indigo profesional */
+    --accent: #6366f1;
 }
 
 body {
@@ -15,6 +16,7 @@ body {
     line-height: 1.6;
 }
 
+/* 2. Navigation */
 nav {
     display: flex;
     justify-content: center;
@@ -39,13 +41,14 @@ nav a {
 
 nav a:hover { color: var(--accent); }
 
+/* 3. Layout Container */
 .container {
     max-width: 500px;
     margin: 40px auto;
     padding: 0 20px;
 }
 
-/* Kartu Profil */
+/* 4. Profile Section & Animations */
 .profile-section {
     background: var(--card-bg);
     padding: 40px;
@@ -53,6 +56,12 @@ nav a:hover { color: var(--accent); }
     text-align: center;
     box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);
     margin-bottom: 30px;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .foto-profil {
@@ -67,21 +76,37 @@ nav a:hover { color: var(--accent); }
 
 h1 { font-size: 24px; font-weight: 800; margin: 0; }
 
-/* Galeri Gaya Instagram */
+/* 5. Gallery Grid & Mobile Friendly */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 40px;
 }
 
 .gallery img {
     width: 100%;
     aspect-ratio: 1/1;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease;
+    cursor: pointer;
 }
 
-/* Tombol Profesional */
+/* Efek saat gambar disentuh/ditekan di HP */
+.gallery img:active {
+    transform: scale(0.95);
+}
+
+/* 6. Video & Buttons */
+.video-container {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
 button {
     background: var(--accent);
     color: white;
