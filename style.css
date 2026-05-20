@@ -1,109 +1,92 @@
-/* Pengaturan Dasar */
+/* 1. Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap');
+
+/* 2. Global Styling */
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Outfit', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     margin: 0;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    color: #2d3436;
 }
 
-/* Navigasi */
+/* 3. Modern Navigation - Dibuat Penuh Lebar */
 nav {
-    background-color: #333;
-    padding: 15px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 20px 0;
     display: flex;
     justify-content: center;
     gap: 20px;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
 nav a {
-    color: white;
+    color: #2d3436;
     text-decoration: none;
     font-weight: 600;
+    font-size: 14px;
+    transition: 0.3s;
 }
 
-/* Container Konten */
+nav a:hover { color: #0984e3; }
+
+/* 4. Professional Card Container - Disesuaikan agar lebih lebar */
 .container {
     background: white;
-    padding: 40px;
-    border-radius: 15px;
+    padding: 40px 20px;
+    border-radius: 30px 30px 0 0; /* Lengkung hanya di atas */
+    box-shadow: 0 -10px 30px rgba(0,0,0,0.05);
+    margin: 40px 10px 0 10px; /* Jarak kiri-kanan lebih kecil */
+    flex-grow: 1; /* Mengisi sisa layar ke bawah */
     text-align: center;
-    box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
-    margin: 40px auto;
-    width: 85%;
 }
 
-/* Gambar Profil */
-img {
-    width: 150px; 
-    height: 150px; 
-    border-radius: 50%;
-    border: 5px solid #f4f4f4;
-    transition: transform 0.3s ease;
-}
-
-img:hover {
-    transform: scale(1.05);
-}
-
-/* Tombol */
-button {
-    padding: 12px 25px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 20px;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #222;
-    color: #bbb;
-    font-size: 14px;
-    margin-top: auto;
-}
-
-/* Responsif untuk Layar Besar */
-@media (min-width: 600px) {
-    .container {
-        width: 400px;
-}
-
-/* Membuat gambar profil Anda berbentuk bulat dan elegan */
-img {
-    border-radius: 50%;
+/* 5. Profil yang Elegan */
+.foto-profil {
     width: 150px;
     height: 150px;
+    border-radius: 50%;
     object-fit: cover;
+    border: 5px solid #fff;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
     margin-bottom: 20px;
 }
 
-/* Mengatur container agar tidak terlalu lebar di layar besar */
-.container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
-}
+/* 6. Typography */
+h1 { font-size: 26px; margin-bottom: 10px; color: #2d3436; }
+p { color: #636e72; line-height: 1.6; margin-bottom: 30px; }
 
-/* Membuat tombol terlihat lebih menarik */
+/* 7. Professional Button */
 button {
-    background-color: #4A90E2;
+    background: #0984e3;
     color: white;
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 700;
     cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 8px 15px rgba(9, 132, 227, 0.3);
 }
 
+button:hover {
+    background: #0773c5;
+    transform: translateY(-3px);
+}
+
+/* 8. Footer Minimalis */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #f5f7fa;
+    color: #b2bec3;
+    font-size: 12px;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Memory - Kenangan Saya</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-bottom: 30px; }
+        .gallery img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; cursor: pointer; }
+        
+        .video-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .video-container { width: 100%; }
+        
+        #modal { display:none; position:fixed; z-index:999; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); text-align:center; }
+        #modal img { max-width: 90%; max-height: 80%; margin-top: 5%; border-radius: 5px; }
+        .tutup { position:absolute; top:20px; right:30px; color:white; font-size:40px; cursor:pointer; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Beranda</a>
+        <a href="tentang.html">Tentang</a>
+        <a href="memory.html">Memory</a>
+    </nav>
+
+    <div class="container">
+        <h1>Kenangan Indah</h1>
+        
+        <h2>Foto Saya</h2>
+        <div class="gallery">
+            <img src="1.png" onclick="bukaModal(this.src)">
+            <img src="2.png" onclick="bukaModal(this.src)">
+            <img src="3.jpg" onclick="bukaModal(this.src)">
+            <img src="4.jpg" onclick="bukaModal(this.src)">
+            <img src="5.jpg" onclick="bukaModal(this.src)">
+        </div>
+
+        <h2>Video Saya</h2>
+        <div class="video-gallery">
+            <div class="video-container"><iframe width="100%" height="315" src="https://www.youtube.com/embed/GLKhxHbW4kU" allowfullscreen></iframe></div>
+            <div class="video-container"><iframe width="100%" height="315" src="https://www.youtube.com/embed/jGCMaw9L1rY" allowfullscreen></iframe></div>
+            <div class="video-container"><iframe width="100%" height="315" src="https://www.youtube.com/embed/gDBh_DaE7m4" allowfullscreen></iframe></div>
+        </div>
+    </div>
+
+    <div id="modal" onclick="tutupModal()">
+        <span class="tutup">&times;</span>
+        <img id="modal-img">
+    </div>
+
+    <script>
+        function bukaModal(src) { document.getElementById("modal").style.display = "block"; document.getElementById("modal-img").src = src; }
+        function tutupModal() { document.getElementById("modal").style.display = "none"; }
+    </script>
+</body>
+</html>
