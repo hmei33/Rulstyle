@@ -1,92 +1,98 @@
-/* 1. Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
 
-/* 2. Global Styling */
-body {
-    font-family: 'Outfit', sans-serif;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    margin: 0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    color: #2d3436;
+:root {
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+    --text-main: #0f172a;
+    --accent: #6366f1; /* Warna indigo profesional */
 }
 
-/* 3. Modern Navigation - Dibuat Penuh Lebar */
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    margin: 0;
+    line-height: 1.6;
+}
+
 nav {
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-    padding: 20px 0;
     display: flex;
     justify-content: center;
-    gap: 20px;
-    width: 100%;
+    gap: 30px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
     position: sticky;
     top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    z-index: 100;
 }
 
 nav a {
-    color: #2d3436;
     text-decoration: none;
+    color: #64748b;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     transition: 0.3s;
 }
 
-nav a:hover { color: #0984e3; }
+nav a:hover { color: var(--accent); }
 
-/* 4. Professional Card Container - Disesuaikan agar lebih lebar */
 .container {
-    background: white;
-    padding: 40px 20px;
-    border-radius: 30px 30px 0 0; /* Lengkung hanya di atas */
-    box-shadow: 0 -10px 30px rgba(0,0,0,0.05);
-    margin: 40px 10px 0 10px; /* Jarak kiri-kanan lebih kecil */
-    flex-grow: 1; /* Mengisi sisa layar ke bawah */
-    text-align: center;
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
-/* 5. Profil yang Elegan */
+/* Kartu Profil */
+.profile-section {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 24px;
+    text-align: center;
+    box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+}
+
 .foto-profil {
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     object-fit: cover;
-    border: 5px solid #fff;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
     margin-bottom: 20px;
+    border: 4px solid var(--bg-color);
+    box-shadow: 0 0 0 2px var(--accent);
 }
 
-/* 6. Typography */
-h1 { font-size: 26px; margin-bottom: 10px; color: #2d3436; }
-p { color: #636e72; line-height: 1.6; margin-bottom: 30px; }
+h1 { font-size: 24px; font-weight: 800; margin: 0; }
 
-/* 7. Professional Button */
+/* Galeri Gaya Instagram */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.gallery img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Tombol Profesional */
 button {
-    background: #0984e3;
+    background: var(--accent);
     color: white;
     border: none;
-    padding: 15px 40px;
-    border-radius: 50px;
-    font-size: 16px;
-    font-weight: 700;
+    padding: 14px 28px;
+    border-radius: 14px;
+    font-weight: 600;
     cursor: pointer;
-    transition: 0.3s;
-    box-shadow: 0 8px 15px rgba(9, 132, 227, 0.3);
+    width: 100%;
+    margin-top: 20px;
+    transition: transform 0.2s;
 }
 
-button:hover {
-    background: #0773c5;
-    transform: translateY(-3px);
-}
-
-/* 8. Footer Minimalis */
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #f5f7fa;
-    color: #b2bec3;
-    font-size: 12px;
-}
+button:hover { transform: translateY(-2px); }
